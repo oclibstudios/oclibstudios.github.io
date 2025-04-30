@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oclib Studios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    <nav class="fixed w-full bg-gray-800 bg-opacity-90 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold">Oclib Studios</div>
+            <div class="space-x-4">
+                <a href="#home" class="hover:text-blue-400">Главная</a>
+                <a href="#services" class="hover:text-blue-400">Услуги</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-800 to-gray-900">
+        <div class="text-center max-w-3xl mx-auto px-4">
+            <h1 class="text-5xl font-bold mb-4">Oclib Studios</h1>
+            <p class="text-xl mb-6">Мы создаем уникальные плагины, моды, ресурспаки и серверные сборки для Minecraft и других игр.</p>
+            <a href="#services" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Наши услуги</a>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12">Наши услуги</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col justify-between">
+                    <div class="text-center">
+                        <i class="fas fa-plug text-4xl text-blue-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Плагины</h3>
+                        <p>Разработка кастомных плагинов для серверов Minecraft (Bukkit, Spigot, Paper).</p>
+                    </div>
+                    <button onclick="openModal('plugins')" class="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Купить</button>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col justify-between">
+                    <div class="text-center">
+                        <i class="fas fa-cube text-4xl text-blue-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Моды</h3>
+                        <p>Создание модификаций для Forge, Fabric и других платформ.</p>
+                    </div>
+                    <button onclick="openModal('mods')" class="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Купить</button>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col justify-between">
+                    <div class="text-center">
+                        <i class="fas fa-paint-brush text-4xl text-blue-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Ресурспаки</h3>
+                        <p>Дизайн уникальных текстур и моделей для улучшения визуального опыта.</p>
+                    </div>
+                    <button onclick="openModal('resourcepacks')" class="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Купить</button>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col justify-between">
+                    <div class="text-center">
+                        <i class="fas fa-server text-4xl text-blue-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Серверные сборки</h3>
+                        <p>Полная настройка серверов с оптимизацией и кастомизацией.</p>
+                    </div>
+                    <button onclick="openModal('serverbuilds')" class="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Купить</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="serviceModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-20">
+        <div class="bg-gray-700 p-6 rounded-lg max-w-lg w-full">
+            <div class="flex items-center mb-4">
+                <i id="modalIcon" class="text-3xl text-blue-400 mr-2"></i>
+                <h3 id="modalTitle" class="text-2xl font-bold"></h3>
+            </div>
+            <p id="modalDescription" class="mb-6"></p>
+            <p class="mb-4 font-semibold">Для покупки обратитесь в:</p>
+            <div class="flex space-x-4 mb-6">
+                <a id="discordLink" href="#" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center">
+                    <i class="fab fa-discord text-xl"></i>
+                </a>
+                <a id="telegramLink" href="#" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center">
+                    <i class="fab fa-telegram-plane text-xl"></i>
+                </a>
+            </div>
+            <button onclick="closeModal()" class="bg-gray-600 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded">Закрыть</button>
+        </div>
+    </div>
+
+    <footer class="bg-gray-900 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>© 2025 Oclib Studios. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        const serviceData = {
+            plugins: {
+                title: "Кастомные плагины",
+                description: "Мы разрабатываем плагины для серверов Minecraft (Bukkit, Spigot, Paper) с учетом ваших требований. От систем экономики до уникальных игровых механик.",
+                discord: "https://discord.gg/3fctRRw7p6",
+                telegram: "https://t.me/dargiog",
+                icon: "fas fa-plug"
+            },
+            mods: {
+                title: "Модификации",
+                description: "Создаем моды для Forge, Fabric и других платформ, добавляя новые предметы, мобов и механики в игру.",
+                discord: "https://discord.gg/3fctRRw7p6",
+                telegram: "https://t.me/dargiog",
+                icon: "fas fa-cube"
+            },
+            resourcepacks: {
+                title: "Ресурспаки",
+                description: "Разрабатываем уникальные текстуры, 3D-модели и звуки для создания незабываемого визуального опыта.",
+                discord: "https://discord.gg/3fctRRw7p6",
+                telegram: "https://t.me/dargiog",
+                icon: "fas fa-paint-brush"
+            },
+            serverbuilds: {
+                title: "Серверные сборки",
+                description: "Настраиваем и Создаем  сборки серверов Minecraft на заказ  с уникальными плагинами,и конфигурациями под ваши нужды.",
+                discord: "https://discord.gg/3fctRRw7p6",
+                telegram: "https://t.me/dargiog",
+                icon: "fas fa-server"
+            }
+        };
+
+        function openModal(service) {
+            const modal = document.getElementById('serviceModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDescription = document.getElementById('modalDescription');
+            const modalIcon = document.getElementById('modalIcon');
+            const discordLink = document.getElementById('discordLink');
+            const telegramLink = document.getElementById('telegramLink');
+
+            const data = serviceData[service];
+            modalTitle.textContent = data.title;
+            modalDescription.textContent = data.description;
+            modalIcon.className = data.icon + " text-3xl text-blue-400 mr-2";
+            discordLink.href = data.discord;
+            telegramLink.href = data.telegram;
+
+            discordLink.onclick = () => window.open(data.discord, '_blank');
+            telegramLink.onclick = () => window.open(data.telegram, '_blank');
+
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('serviceModal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
